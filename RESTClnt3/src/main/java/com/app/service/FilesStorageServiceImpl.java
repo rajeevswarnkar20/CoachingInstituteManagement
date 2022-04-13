@@ -14,13 +14,10 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
-
 @Service
 @Transactional
 public class FilesStorageServiceImpl implements IFilesStorageService {
-
-  private final Path root = Paths.get("E:\\uploads");
-
+  private final Path root = Paths.get("uploads");
   @Override
   public void init() {
     try {
@@ -29,7 +26,6 @@ public class FilesStorageServiceImpl implements IFilesStorageService {
       throw new RuntimeException("Could not initialize folder for upload!");
     }
   }
-
   @Override
   public void save(MultipartFile file) {
     try {
@@ -38,13 +34,11 @@ public class FilesStorageServiceImpl implements IFilesStorageService {
       throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
     }
   }
-
   @Override
   public Resource load(String filename) {
     try {
       Path file = root.resolve(filename);
       Resource resource = new UrlResource(file.toUri());
-
       if (resource.exists() || resource.isReadable()) {
         return resource;
       } else {
@@ -54,19 +48,16 @@ public class FilesStorageServiceImpl implements IFilesStorageService {
       throw new RuntimeException("Error: " + e.getMessage());
     }
   }
-
   @Override
   public void deleteAll() {
     FileSystemUtils.deleteRecursively(root.toFile());
   }
-
   @Override
   public Stream<Path> loadAll() {
     try {
-      return Files.walk(this.root, 1).filter(path -> !path.equals(this.root)).map(this.root::relativize);
+      return Files.walk(this.root, 10).filter(path -> !path.equals(this.root)).map(this.root::relativize);
     } catch (IOException e) {
       throw new RuntimeException("Could not load the files!");
     }
   }
-
 }

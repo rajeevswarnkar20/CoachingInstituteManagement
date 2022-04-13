@@ -24,7 +24,7 @@ export default function Student() {
                     <Nav.Link eventKey="records">Recordings</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                    <Nav.Link eventKey="notes">Notes</Nav.Link>
+                    <Nav.Link eventKey="notes">Notes And Notifications</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                     <Nav.Link eventKey="faculties">Faculty in Course</Nav.Link>

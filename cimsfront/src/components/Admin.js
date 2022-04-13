@@ -40,7 +40,7 @@ export default function Admin() {
                     <Nav.Link eventKey="test_list">Quiz List</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                    <Nav.Link eventKey="notes">Notes</Nav.Link>
+                    <Nav.Link eventKey="notes">Documents And  Notifications</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                     <Nav.Link eventKey="pwd">Change Password</Nav.Link>

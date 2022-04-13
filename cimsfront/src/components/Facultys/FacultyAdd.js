@@ -131,19 +131,19 @@ render(){
             </Form.Label>
             <Col sm={10}>
             <Form.Control as="select" value={this.state.course1} onChange={(e) => this.setState({course1:e.target.value})}>
-            <option>Select First Course</option>
+            <option value="">Select First Course</option>
             {this.state.courseData.map(opt => (
                 <option value={opt.courseName} key={opt.course_id}>{opt.courseName}</option>
             ))}
             </Form.Control>
             <Form.Control as="select" value={this.state.course2} onChange={(e) => this.setState({course2:e.target.value})}>
-            <option>Select Second Course</option>
+            <option value="">Select Second Course</option>
             {this.state.courseData.map(opt => (
                 <option value={opt.courseName} key={opt.course_id}>{opt.courseName}</option>
             ))}
             </Form.Control>
             <Form.Control as="select" value={this.state.course3} onChange={(e) => this.setState({course3:e.target.value})}>
-            <option>Select Third Course</option>
+            <option value="">Select Third Course</option>
             {this.state.courseData.map(opt => (
                 <option value={opt.courseName} key={opt.course_id}>{opt.courseName}</option>
             ))}
