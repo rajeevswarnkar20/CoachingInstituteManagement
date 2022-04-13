@@ -87,6 +87,9 @@ export default function Login() {
 
   return (
     <div className="Login">
+      <div className="part1">
+      <img className="img" src="./images/11.jpg" alt=""></img></div>
+      <div className="part2">
       <p>{message}</p>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
@@ -116,12 +119,14 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        <br></br>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
       </Form>
-      <div><Link to="./StudentRegistration"><Button>Student Registration</Button></Link>
-      <Link to="./FacultyRegistration"><Button>Faculty Registration</Button></Link></div>
+      <br></br>
+      <div><Link to="./StudentRegistration"><Button variant="outline-success">Student Registration</Button></Link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="./FacultyRegistration"><Button variant="outline-success">Faculty Registration</Button></Link></div></div>
     </div>
   );
 }

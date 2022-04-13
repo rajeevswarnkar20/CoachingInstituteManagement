@@ -22,7 +22,7 @@ export default function Faculty() {
                     <Nav.Link eventKey="profile">Welcome  {UserProfile.getName()}</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                    <Nav.Link eventKey="notes">Documents and Notification</Nav.Link>
+                    <Nav.Link eventKey="notes">Notes And Notifications</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                     <Nav.Link eventKey="second">Student List</Nav.Link>
